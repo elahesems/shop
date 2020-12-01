@@ -13,6 +13,7 @@ class Sliders(models.Model):
     class Meta:
         verbose_name_plural = "sliderler"
 
+
 class Designer(models.Model):
     name = models.CharField(max_length=100,verbose_name='ad')
     lastname = models.CharField(max_length=100,verbose_name='soyad')
@@ -28,9 +29,13 @@ class Product(models.Model):
         ('usd','USD'),
         ('euro','EURO')
     )
-    genderType = (
-        ('m', 'male'),
-        ('f', 'female')
+    categoryType = (
+        ('kadin', 'kadin'),
+        ('erkek', 'erkek'),
+        ('elektronik', 'elektronik'),
+        ('sport', 'sport'),
+        ('aksesuar', 'aksesuar'),
+        ('makyaj', 'makyaj'),
     )
     shoesSizeChoices = (
         ('36', '36'),
@@ -57,8 +62,8 @@ class Product(models.Model):
     price = models.IntegerField(max_length=100,verbose_name='fiyat')
     currency = models.CharField(max_length=5,choices=currencyType, default='tl',verbose_name='kur')
     picture = models.ImageField('resim seçiniz', null=True, blank=True)
-    designedby = models.ForeignKey(Designer,on_delete=models.CASCADE,verbose_name='tasarımcı')
-    gender = MultiSelectField(choices=genderType,verbose_name='cinsiyet',null=True,blank=True)
+    designedby = models.ForeignKey(Designer,on_delete=models.CASCADE,verbose_name='tasarımcı', null=True, blank=True)
+    category = MultiSelectField(choices=categoryType,verbose_name='kategoriler',null=True,blank=True)
     shoesSize = MultiSelectField(choices=shoesSizeChoices,verbose_name='ayakkabı numarası',null=True,blank=True)
     size = MultiSelectField(choices=sizeChoices,verbose_name='size',null=True,blank=True)
     inDate = models.DateField(auto_now_add=True,null=True,blank=True,verbose_name='giriş tarihi')
@@ -66,4 +71,5 @@ class Product(models.Model):
 
     class Meta:
         verbose_name_plural = "Ürünler"
+
 
