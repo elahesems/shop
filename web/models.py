@@ -58,6 +58,20 @@ class Product(models.Model):
         ('xxxl', 'xxxl')
 
     )
+    colorChoices = (
+        ('red', 'red'),
+        ('pink', 'pink'),
+        ('orange', 'orange'),
+        ('yellow', 'yellow'),
+        ('purple', 'purple'),
+        ('green', 'green'),
+        ('blue', 'blue'),
+        ('brown', 'brown'),
+        ('black', 'black'),
+
+    )
+
+
     name = models.CharField(max_length=100,verbose_name='ad')
     price = models.IntegerField(max_length=100,verbose_name='fiyat')
     currency = models.CharField(max_length=5,choices=currencyType, default='tl',verbose_name='kur')
@@ -66,8 +80,10 @@ class Product(models.Model):
     category = MultiSelectField(choices=categoryType,verbose_name='kategoriler',null=True,blank=True)
     shoesSize = MultiSelectField(choices=shoesSizeChoices,verbose_name='ayakkabı numarası',null=True,blank=True)
     size = MultiSelectField(choices=sizeChoices,verbose_name='size',null=True,blank=True)
+    color = MultiSelectField(choices=colorChoices,verbose_name='renk',null=True,blank=True)
     inDate = models.DateField(auto_now_add=True,null=True,blank=True,verbose_name='giriş tarihi')
     status = models.BooleanField(default=True,verbose_name='gösterilsin mi?')
+
 
     class Meta:
         verbose_name_plural = "Ürünler"
