@@ -23,6 +23,11 @@ class ModifiedDesigner(admin.ModelAdmin):
     # date_hierarchy = 'inDate' #navigate quickly through a date hierarchy.
     ordering = ['id'] #order the list by 'appStatus' and then 'appDate'
 
+
+
+
+
 admin.site.register(Sliders,ModifiedSlider)
 admin.site.register(Product,ModifiedProduct)
 admin.site.register(Designer,ModifiedDesigner)
+admin.site.register(Footer)

@@ -629,9 +629,9 @@
 						<div class="sin-pro">
 							<!-- Product Image -->
 							<div class="sin-pro-img-action fix">
-								<a href="#" class="sin-pro-img"><img style="width: 262px; height: 350px" {% if product.picture %} src="{{ product.picture.url }}"{% else %} src="#" {% endif %}  alt="" /></a>
+								<a href="#" class="sin-pro-img"><img style="width: 262px; height: 350px" {% if product.picture %} src="{{ product.picture.url }}"{% else %} src="{% static 'img/no-image.png' %}" {% endif %}  alt="" /></a>
 								{% if forloop.first %}<span class="pro-label label-new">new</span>{% endif %}
-								{% if lastDayAdded %}<span class="pro-label label-new" style="padding-top: 20px">son 1 gunde</span>{% endif %}
+								{% if sonGun %}<span class="pro-label label-new" style="padding-top: 20px">son 1 gunde</span>{% endif %}
 								<a href="#" class="pro-quick-view" data-toggle="modal"><i class="zmdi zmdi-plus-circle-o"></i></a>
 								<!-- Product Action -->
 								<div class="sin-pro-action">
@@ -663,11 +663,125 @@
 					{%endfor%}
 
 
+
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
+
+
+<div class="feature-product-area margin-bottom-90">
+	<div class="container">
+		<div class="row">
+			<!-- Section Title -->
+			<div class="section-title col-xs-12 text-center"><h1>Erkek son eklenen urun</h1></div>
+			<div class="col-xs-12">
+				<!-- Product Slider -->
+
+				<div class="product-slider feature-slider">
+					{% for product in erkekList %}
+						{% lastDayAdded product %}
+						<div class="sin-pro">
+							<!-- Product Image -->
+							<div class="sin-pro-img-action fix">
+								<a href="#" class="sin-pro-img"><img style="width: 262px; height: 350px" {% if product.picture %} src="{{ product.picture.url }}"{% else %} src="{% static 'img/no-image.png' %}" {% endif %}  alt="" /></a>
+								{% if forloop.first %}<span class="pro-label label-new">new</span>{% endif %}
+								{% if sonGun %}<span class="pro-label label-new" style="padding-top: 20px">son 1 gunde</span>{% endif %}
+								<a href="#" class="pro-quick-view" data-toggle="modal"><i class="zmdi zmdi-plus-circle-o"></i></a>
+								<!-- Product Action -->
+								<div class="sin-pro-action">
+									<button class="pro-act-btn btn-icon"><i class="zmdi zmdi-refresh"></i></button>
+									<button class="pro-act-btn btn-text">add to bag</button>
+									<button class="pro-act-btn btn-icon"><i class="zmdi zmdi-favorite-outline"></i></button>
+								</div>
+							</div>
+							<!-- Product Details -->
+							<div class="sin-pro-details fix">
+								<a class="sin-pro-title" href="#">{{product.name}}</a>
+								<!-- Product Price -->
+								<div class="sin-pro-price float-left">
+									<span class="new">{{product.price}} {{product.currency}}</span>
+								</div>
+								<!-- Product Ratting -->
+								<div class="sin-pro-ratting float-right">
+									<div class="rattings float-left">
+										<i class="zmdi zmdi-star"></i>
+										<i class="zmdi zmdi-star"></i>
+										<i class="zmdi zmdi-star"></i>
+										<i class="zmdi zmdi-star"></i>
+										<i class="zmdi zmdi-star-half"></i>
+									</div>
+									<span>(23)</span>
+								</div>
+							</div>
+						</div>
+					{%endfor%}
+
+
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="feature-product-area margin-bottom-90">
+	<div class="container">
+		<div class="row">
+			<!-- Section Title -->
+			<div class="section-title col-xs-12 text-center"><h1>Aksesuar son eklenen urun</h1></div>
+			<div class="col-xs-12">
+				<!-- Product Slider -->
+
+				<div class="product-slider feature-slider">
+					{% for product in aksesuarList %}
+						{% lastDayAdded product %}
+						<div class="sin-pro">
+							<!-- Product Image -->
+							<div class="sin-pro-img-action fix">
+								<a href="#" class="sin-pro-img"><img style="width: 262px; height: 350px" {% if product.picture %} src="{{ product.picture.url }}"{% else %} src="{% static 'img/no-image.png' %}" {% endif %}  alt="" /></a>
+								{% if forloop.first %}<span class="pro-label label-new">new</span>{% endif %}
+								{% if sonGun %}<span class="pro-label label-new" style="padding-top: 20px">son 1 gunde</span>{% endif %}
+								<a href="#" class="pro-quick-view" data-toggle="modal"><i class="zmdi zmdi-plus-circle-o"></i></a>
+								<!-- Product Action -->
+								<div class="sin-pro-action">
+									<button class="pro-act-btn btn-icon"><i class="zmdi zmdi-refresh"></i></button>
+									<button class="pro-act-btn btn-text">add to bag</button>
+									<button class="pro-act-btn btn-icon"><i class="zmdi zmdi-favorite-outline"></i></button>
+								</div>
+							</div>
+							<!-- Product Details -->
+							<div class="sin-pro-details fix">
+								<a class="sin-pro-title" href="#">{{product.name}}</a>
+								<!-- Product Price -->
+								<div class="sin-pro-price float-left">
+									<span class="new">{{product.price}} {{product.currency}}</span>
+								</div>
+								<!-- Product Ratting -->
+								<div class="sin-pro-ratting float-right">
+									<div class="rattings float-left">
+										<i class="zmdi zmdi-star"></i>
+										<i class="zmdi zmdi-star"></i>
+										<i class="zmdi zmdi-star"></i>
+										<i class="zmdi zmdi-star"></i>
+										<i class="zmdi zmdi-star-half"></i>
+									</div>
+									<span>(23)</span>
+								</div>
+							</div>
+						</div>
+					{%endfor%}
+
+
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
 <!-- Blog Area
 ============================================ -->
 <div class="blog-area bg-off-white padding-90">
@@ -830,22 +944,25 @@
 <!-- Footer Top Area
 ============================================ -->
 <div class="footer-top bg-off-white padding-top-80 padding-bottom-90">
+	{% for footer in footer %}
 	<div class="container">
 		<div class="row">
 			<!-- Footer Address -->
 			<div class="sin-footer footer-address col-lg-3 col-md-4 col-sm-6 col-xs-12">
-				<div class="footer-logo"><img src="{% static 'img/logo-2.png' %}" alt="logo" /></div>
-				<p><span>ADDRESS:</span> 28 Green Tower, Street Name New York City, USA</p>
-				<p><span>Telephone:</span> +88017 222 333</p>
-				<p><span>Email:</span> contact@shopieee.com</p>
-				<div class="footer-social">
-					<a class="facebook" href="#"><i class="zmdi zmdi-facebook"></i></a>
-					<a class="twitter" href="#"><i class="zmdi zmdi-twitter"></i></a>
-					<a class="vimeo" href="#"><i class="zmdi zmdi-vimeo"></i></a>
-					<a class="google-plus" href="#"><i class="zmdi zmdi-google-plus"></i></a>
-					<a class="tumblr" href="#"><i class="zmdi zmdi-tumblr"></i></a>
-					<a class="pinterest" href="#"><i class="zmdi zmdi-pinterest"></i></a>
+
+					<div class="footer-logo"><img src="{% static 'img/logo-2.png' %}" alt="logo" /></div>
+					<p><span>ADDRESS:</span> {{ footer.address }}</p>
+					<p><span>Telephone:</span> {{ footer.telephone }}</p>
+					<p><span>Email:</span> {{footer.email }}</p>
+					<div class="footer-social">
+					<a class="facebook" href="{{ footer.facebook }}"><i class="zmdi zmdi-facebook"></i></a>
+					<a class="twitter" href="{{ footer.twitter }}"><i class="zmdi zmdi-twitter"></i></a>
+					<a class="vimeo" href="{{ footer.vimeo }}"><i class="zmdi zmdi-vimeo"></i></a>
+					<a class="google-plus" href="{{ footer.googlePlus }}"><i class="zmdi zmdi-google-plus"></i></a>
+					<a class="tumblr" href="{{ footer.tumblr }}"><i class="zmdi zmdi-tumblr"></i></a>
+					<a class="pinterest" href="{{ footer.pinterest }}"><i class="zmdi zmdi-pinterest"></i></a>
 				</div>
+
 			</div>
 			<!-- Footer Service -->
 			<div class="sin-footer footer-service footer-link col-lg-3 col-md-2 col-sm-6 col-xs-12">
@@ -869,7 +986,7 @@
 				</ul>
 			</div>
 			<!-- Footer Newsletter -->
-			<div class="sin-footer footer-newsletter col-lg-3 col-md-4 col-sm-6 col-xs-12">
+			<div class="sin-footer footer-newsletter  col-lg-3 col-md-2 col-sm-6 col-xs-12">
 				<h3>newsletter</h3>
 				<p>Subscribe by our newsletter and get update protidin.</p>
 				<form id="mc-form" class="mc-form footer-newsletter">
@@ -885,6 +1002,7 @@
 			</div>
 		</div>
 	</div>
+	{% endfor %}
 </div>
 <!-- Footer Bottom Area
 ============================================ -->

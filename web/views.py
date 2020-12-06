@@ -29,5 +29,30 @@ def home(request):
             if i==8:
                 break
 
-    context = {'sliders':sliders,'products':products,'categories':categories,'kadinList':kadinList}
+    erkekList = []
+    i = 0
+    for product in productsByid:
+
+        if 'erkek' in product.category:
+
+            erkekList.append(product)
+            i += 1
+            if i == 8:
+                break
+
+    aksesuarList = []
+    i = 0
+    for product in productsByid:
+
+        if 'aksesuar' in product.category:
+
+            aksesuarList.append(product)
+            i += 1
+            if i == 8:
+                break
+
+    footer = Footer.objects.all()
+
+    context = {'sliders':sliders,'products':products,'categories':categories,'kadinList':kadinList,'erkekList':erkekList,'aksesuarList':aksesuarList,'footer':footer}
     return render(request,'index.html',context)
+

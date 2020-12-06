@@ -89,3 +89,18 @@ class Product(models.Model):
         verbose_name_plural = "Ürünler"
 
 
+
+class Footer(models.Model):
+    address = models.CharField(max_length=100,null=True,blank=True)
+    telephone = models.IntegerField(null=True,blank=True)
+    email = models.CharField(max_length=100,null=True,blank=True,verbose_name='EPOSTA')
+    facebook = models.URLField(null=True,blank=True,verbose_name='facebook')
+    twitter = models.URLField(null=True,blank=True,verbose_name='twitter')
+    vimeo = models.URLField(null=True,blank=True,verbose_name='vimeo')
+    googlePlus = models.URLField(null=True,blank=True,verbose_name='googlePlus')
+    tumblr = models.URLField(null=True,blank=True,verbose_name='tumblr')
+    pinterest = models.URLField(null=True,blank=True,verbose_name='pinterest')
+
+
+
+

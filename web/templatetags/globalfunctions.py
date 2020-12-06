@@ -10,9 +10,10 @@ def lastDayAdded(context,value):
 
     if todayIs == productDay:
 
-        context['lastDayAdded']=True
+
+        context['sonGun']=True
     else:
 
-        context['lastDayAdded']=False
+        context['sonGun']=False
     return ''
 register.simple_tag(takes_context=True)(lastDayAdded)
