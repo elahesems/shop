@@ -8,6 +8,9 @@ from web.models import *
 def home(request):
     sliders=Sliders.objects.all()
     products = Product.objects.all()
+    theUrl = request.path
+    if theUrl == '/':
+        isHomePage = True
 
     categoriesList = Product._meta.get_field('category').choices
     categories=[]
@@ -53,6 +56,13 @@ def home(request):
 
     footer = Footer.objects.all()
 
-    context = {'sliders':sliders,'products':products,'categories':categories,'kadinList':kadinList,'erkekList':erkekList,'aksesuarList':aksesuarList,'footer':footer}
+    context = {'isHomePage':isHomePage,'sliders':sliders,'products':products,'categories':categories,'kadinList':kadinList,'erkekList':erkekList,'aksesuarList':aksesuarList,'footer':footer}
     return render(request,'index.html',context)
 
+
+
+def seyirci(request):
+    seyirci=Seyirci.objects.all()
+
+    context ={'seyirci':seyirci}
+    return render(request, 'contact.html', context)

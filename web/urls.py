@@ -4,4 +4,5 @@ from web import views
 
 urlpatterns =[
     path('',views.home,name="home"),
+    path('seyirci/',views.seyirci,name="seyirci"),
 ]

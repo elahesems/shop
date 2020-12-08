@@ -73,6 +73,8 @@ class Product(models.Model):
 
 
     name = models.CharField(max_length=100,verbose_name='ad')
+    markname = models.CharField(max_length=100, null=True, blank=True)
+    markpic = models.ImageField(null=True, blank=True, verbose_name='logo mark')
     price = models.IntegerField(max_length=100,verbose_name='fiyat')
     currency = models.CharField(max_length=5,choices=currencyType, default='tl',verbose_name='kur')
     picture = models.ImageField('resim seçiniz', null=True, blank=True)
@@ -85,6 +87,7 @@ class Product(models.Model):
     status = models.BooleanField(default=True,verbose_name='gösterilsin mi?')
 
 
+
     class Meta:
         verbose_name_plural = "Ürünler"
 
@@ -93,7 +96,7 @@ class Product(models.Model):
 class Footer(models.Model):
     address = models.CharField(max_length=100,null=True,blank=True)
     telephone = models.IntegerField(null=True,blank=True)
-    email = models.CharField(max_length=100,null=True,blank=True,verbose_name='EPOSTA')
+    email = models.EmailField(max_length=100,null=True,blank=True,verbose_name='EPOSTA')
     facebook = models.URLField(null=True,blank=True,verbose_name='facebook')
     twitter = models.URLField(null=True,blank=True,verbose_name='twitter')
     vimeo = models.URLField(null=True,blank=True,verbose_name='vimeo')
@@ -102,5 +105,13 @@ class Footer(models.Model):
     pinterest = models.URLField(null=True,blank=True,verbose_name='pinterest')
 
 
+class Seyirci(models.Model):
+
+    location = models.CharField(max_length=500,help_text=(':2131/5 sokak no:6 Adalet mahallesi bayraklı'))
+    countrylocation = models.CharField(max_length=500,null=True,blank=True)
+    phone = models.IntegerField(max_length=100,verbose_name='phonenumber')
+    fax = models.IntegerField(max_length=100,verbose_name='fax')
+    email1 = models.EmailField(max_length=100)
+    email2 = models.EmailField(max_length=100)
 
 

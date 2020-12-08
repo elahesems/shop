@@ -597,7 +597,6 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 .header {}
 .header.fixed {
   left: 0;
-  position: absolute;
   right: 0;
   top: 0;
   z-index: 9999;
@@ -3998,6 +3997,7 @@ a.meanmenu-reveal span:first-child {
   display: block;
   height: 420px;
   width: 100%;
+
 }
 .contact-form h2 {
   font-size: 20px;

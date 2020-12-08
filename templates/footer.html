@@ -1,0 +1,181 @@
+{% load static%}
+<footer>
+<div class="footer-top bg-off-white padding-top-80 padding-bottom-90">
+
+	{% for footer in footer %}
+	<div class="container">
+		<div class="row">
+			<!-- Footer Address -->
+			<div class="sin-footer footer-address col-lg-3 col-md-4 col-sm-6 col-xs-12">
+
+					<div class="footer-logo"><img src="{% static 'img/logo-2.png' %}" alt="logo" /></div>
+					<p><span>ADDRESS:</span> {{ footer.address }}</p>
+					<p><span>Telephone:</span> {{ footer.telephone }}</p>
+					<p><span>Email:</span> {{footer.email }}</p>
+					<div class="footer-social">
+					<a class="facebook" href="{{ footer.facebook }}"><i class="zmdi zmdi-facebook"></i></a>
+					<a class="twitter" href="{{ footer.twitter }}"><i class="zmdi zmdi-twitter"></i></a>
+					<a class="vimeo" href="{{ footer.vimeo }}"><i class="zmdi zmdi-vimeo"></i></a>
+					<a class="google-plus" href="{{ footer.googlePlus }}"><i class="zmdi zmdi-google-plus"></i></a>
+					<a class="tumblr" href="{{ footer.tumblr }}"><i class="zmdi zmdi-tumblr"></i></a>
+					<a class="pinterest" href="{{ footer.pinterest }}"><i class="zmdi zmdi-pinterest"></i></a>
+				</div>
+
+			</div>
+			<!-- Footer Service -->
+			<div class="sin-footer footer-service footer-link col-lg-3 col-md-2 col-sm-6 col-xs-12">
+				<h3>services</h3>
+				<ul>
+					<li><a href="#">About us</a></li>
+					<li><a href="#">Return Policy</a></li>
+					<li><a href="#">Our Blog</a></li>
+					<li><a href="#">Contact Us</a></li>
+					<li><a href="#">Terms & Condition</a></li>
+				</ul>
+			</div>
+			<!-- Footer Account -->
+			<div class="sin-footer footer-account footer-link col-lg-3 col-md-2 col-sm-6 col-xs-12">
+				<h3>account</h3>
+				<ul>
+					<li><a href="#">Your Account</a></li>
+					<li><a href="#">Checkout</a></li>
+					<li><a href="#">Login</a></li>
+					<li><a href="#">Register</a></li>
+				</ul>
+			</div>
+			<!-- Footer Newsletter -->
+			<div class="sin-footer footer-newsletter  col-lg-3 col-md-2 col-sm-6 col-xs-12">
+				<h3>newsletter</h3>
+				<p>Subscribe by our newsletter and get update protidin.</p>
+				<form id="mc-form" class="mc-form footer-newsletter">
+					<input id="mc-email" type="email" autocomplete="off" placeholder="Email Address">
+					<input id="mc-submit" type="submit" value="subscribe" />
+				</form>
+				<!-- mailchimp-alerts Start -->
+				<div class="mailchimp-alerts text-centre">
+					<div class="mailchimp-submitting"></div><!-- mailchimp-submitting end -->
+					<div class="mailchimp-success"></div><!-- mailchimp-success end -->
+					<div class="mailchimp-error"></div><!-- mailchimp-error end -->
+				</div><!-- mailchimp-alerts end -->
+			</div>
+		</div>
+	</div>
+	{% endfor %}
+</div>
+<!-- Footer Bottom Area
+============================================ -->
+<div class="footer-bottom">
+	<div class="container">
+		<div class="row">
+			<!-- Copyright -->
+			<div class="copyright col-sm-6 col-xs-12 text-left">
+				<p>2016 ® All Rights Reserved - <a href="#">BootExperts</a> Responsive Theme </p>
+			</div>
+			<!-- Payment Method -->
+			<div class="payment-method col-sm-6 col-xs-12 text-right">
+				<img src="{% static 'img/payment-method.png' %}" alt="" />
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Quick View Area
+============================================ -->
+<div class="modal quick-view-modal animated zoomOut" id="pro-quick-view">
+	<div class="table">
+		<div class="table-cell">
+			<div class="container">
+				<div class="row">
+					<div class="quick-view-container fix">
+					<button class="model-close" data-dismiss="modal"><i class="zmdi zmdi-close"></i></button>
+						<!-- Product Details Image -->
+						<div class="product-details-image col-md-6 col-xs-12">
+							<ul class="quick-pro-thumb" role="tablist">
+								<li class="active"><a href="#" data-toggle="tab"><img src="{% static 'img/product-details/thumb-2.jpg' %}" alt="" /></a></li>
+								<li><a href="#" data-toggle="tab"><img src="{% static 'img/product-details/thumb-1.jpg' %}" alt="" /></a></li>
+								<li><a href="#" data-toggle="tab"><img src="{% static 'img/product-details/thumb-3.jpg' %}" alt="" /></a></li>
+								<li><a href="#" data-toggle="tab"><img src="{% static 'img/product-details/thumb-4.jpg' %}" alt="" /></a></li>
+							</ul>
+							<div class="quick-pro-big tab-content fix">
+								<div class="tab-pane active" id="big-image-1"><img src="{% static 'img/product-details/big-2.jpg' %}" alt="" /></div>
+								<div class="tab-pane" id="big-image-2"><img src="{% static 'img/product-details/big-1.jpg' %}" alt="" /></div>
+								<div class="tab-pane" id="big-image-3"><img src="{% static 'img/product-details/big-3.jpg' %}" alt="" /></div>
+								<div class="tab-pane" id="big-image-4"><img src="{% static 'img/product-details/big-4.jpg' %}" alt="" /></div>
+							</div>
+						</div>
+						<!-- Product Details Content -->
+						<div class="product-details-content col-md-6 col-xs-12">
+							<a class="pro-details-title" href="#">Full sleev women shirt</a>
+							<div class="pro-details-price-ratting fix">
+								<!-- Product Price -->
+								<div class="pro-details-price float-left">
+									<span class="new">$ 45.00</span>
+									<span class="old">(145.00)</span>
+								</div>
+								<!-- Product Ratting -->
+								<div class="pro-details-ratting float-right">
+									<div class="rattings float-left">
+										<i class="zmdi zmdi-star"></i>
+										<i class="zmdi zmdi-star"></i>
+										<i class="zmdi zmdi-star"></i>
+										<i class="zmdi zmdi-star"></i>
+										<i class="zmdi zmdi-star-half"></i>
+									</div>
+									<span>(5)</span>
+								</div>
+							</div>
+							<div class="pro-details-overview">
+								<h5>overview:</h5>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tem portul indunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud  exercitation ullamco laboris nisi ut aliquip.</p>
+							</div>
+							<div class="pro-details-size fix">
+								<h5>size:</h5>
+								<a href="#">s</a>
+								<a href="#">m</a>
+								<a href="#">l</a>
+								<a href="#">xl</a>
+								<a href="#">xxl</a>
+							</div>
+							<div class="pro-details-color-quantity fix">
+								<div class="pro-details-color float-left">
+									<h5>color:</h5>
+									<a href="#" class="active" style="background: #ffac9a;">color 1</a>
+									<a href="#" style="background: #ff4081;">color 2</a>
+									<a href="#" style="background: #000000;">color 3</a>
+								</div>
+								<div class="pro-details-quantity float-left">
+									<h5>quantity:</h5>
+									<div class="pro-qty float-left fix">
+										<input type="text" value="0" name="qtybutton" class="cart-plus-minus-box">
+									</div>
+								</div>
+							</div>
+							<!-- Product Action -->
+							<div class="pro-details-action fix">
+								<button class="pro-details-act-btn btn-text">add to bag</button>
+								<button class="pro-details-act-btn btn-icon"><i class="zmdi zmdi-favorite-outline"></i></button>
+								<button class="pro-details-act-btn btn-icon"><i class="zmdi zmdi-refresh"></i></button>
+							</div>
+							<div class="pro-details-share fix">
+								<h5>share this on:</h5>
+								<div class="footer-social">
+									<a class="facebook" href="#"><i class="zmdi zmdi-facebook"></i></a>
+									<a class="twitter" href="#"><i class="zmdi zmdi-twitter"></i></a>
+									<a class="vimeo" href="#"><i class="zmdi zmdi-vimeo"></i></a>
+									<a class="google-plus" href="#"><i class="zmdi zmdi-google-plus"></i></a>
+									<a class="tumblr" href="#"><i class="zmdi zmdi-tumblr"></i></a>
+									<a class="pinterest" href="#"><i class="zmdi zmdi-pinterest"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<!-- JS -->
+
+</footer>
