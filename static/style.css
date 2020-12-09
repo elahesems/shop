@@ -1166,6 +1166,7 @@ a.meanmenu-reveal span:first-child {
   display: table;
   height: 100%;
   padding: 130px 0 0;
+  z-index: 9999;
 }
 .slide-text-left {
   float:left;
@@ -1188,6 +1189,7 @@ a.meanmenu-reveal span:first-child {
 .middle-text {
   display: table-cell;
   vertical-align: middle;
+  z-index: 9999;
 }
 .cap-sub-title {
   font-size: 40px;
@@ -2292,6 +2294,7 @@ a.meanmenu-reveal span:first-child {
 .brand-slider .sin-brand{}
 .brand-slider .sin-brand img {
   max-width: 140px;
+
 }
 /*----------------------------------------*/
 /*  11.  Shop Page

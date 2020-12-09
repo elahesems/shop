@@ -14,6 +14,8 @@ class Sliders(models.Model):
         verbose_name_plural = "sliderler"
 
 
+
+
 class Designer(models.Model):
     name = models.CharField(max_length=100,verbose_name='ad')
     lastname = models.CharField(max_length=100,verbose_name='soyad')
@@ -23,6 +25,18 @@ class Designer(models.Model):
         return str(self.name) + ' ' + str(self.lastname)
     class Meta:
         verbose_name_plural = "TaSaRıMCı"
+
+
+class Brands(models.Model):
+    name = models.CharField(max_length=300,verbose_name='brandin Ismi')
+    brandslogo = models.ImageField(verbose_name='logo')
+    def __str__(self):
+        return self.name
+    class Meta:
+        verbose_name_plural = "BRaNDs"
+
+
+
 class Product(models.Model):
     currencyType=(
         ('tl','TL'),
@@ -73,8 +87,7 @@ class Product(models.Model):
 
 
     name = models.CharField(max_length=100,verbose_name='ad')
-    markname = models.CharField(max_length=100, null=True, blank=True)
-    markpic = models.ImageField(null=True, blank=True, verbose_name='logo mark')
+    brandsby = models.ForeignKey(Brands, on_delete=models.CASCADE, verbose_name='brand', null=True, blank=True)
     price = models.IntegerField(max_length=100,verbose_name='fiyat')
     currency = models.CharField(max_length=5,choices=currencyType, default='tl',verbose_name='kur')
     picture = models.ImageField('resim seçiniz', null=True, blank=True)
@@ -114,4 +127,5 @@ class Seyirci(models.Model):
     email1 = models.EmailField(max_length=100)
     email2 = models.EmailField(max_length=100)
 
-
+    class Meta:
+        verbose_name_plural = "ConTaCt"

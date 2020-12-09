@@ -53,26 +53,19 @@
 ============================================ -->
 
 <div class="brand-area " style="position: static; background-image: url({% static 'img/b3.jpg'%})">
-	{% for product in products %}
+
 	<div class="container">
 		<div class="row">
 			<div class="col-xs-12">
 				<div class="brand-slider">
-					<div class="sin-brand"><img src="{% static 'img/brands/1.png' %}" alt="" /></div>
-					<div class="sin-brand"><img src="{% static 'img/brands/2.png' %}" alt="" /></div>
-					<div class="sin-brand"><img src="{% static 'img/brands/3.png' %}" alt="" /></div>
-					<div class="sin-brand"><img src="{% static 'img/brands/4.png' %}" alt="" /></div>
-					<div class="sin-brand"><img src="{% static 'img/brands/5.png' %}" alt="" /></div>
-					<div class="sin-brand"><img src="{% static 'img/brands/6.png' %}" alt="" /></div>
-					<div class="sin-brand"><img src="{% static 'img/brands/7.png' %}" alt="" /></div>
-					<div class="sin-brand"><img src="{% static 'img/brands/8.png' %}" alt="" /></div>
-					<div class="sin-brand"><img src="{% static 'img/brands/9.png' %}" alt="" /></div>
-					<div class="sin-brand"><img src="{% static 'img/brands/10.png' %}" alt="" /></div>
+					{% for brands in brands %}
+					<div class="sin-brand"><img src="{{ brands.brandslogo.url }}" alt="" /></div>
+					{% endfor %}
 				</div>
 			</div>
 		</div>
 	</div>
-	{% endfor %}
+
 </div>
 
 

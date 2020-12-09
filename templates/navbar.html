@@ -15,7 +15,7 @@
 <div class="as-mainwrapper">
 <!-- Header
 ============================================ -->
-<div class="header transparent fixed" {% if isHomePage %} style="position: absolute" {% else %}  style="position: static; background-image: url({% static 'img/ec-background/bg-2.jpg'%})"  {% endif %}>
+<div class="header transparent fixed" {% if isHomePage %} style="position: absolute" {% else %}  style="position: static; background-image: url({% static 'img/ec-background/ee.jpg'%})"  {% endif %}>
 	<!-- Header Top -->
 	<div class="header-top">
 		<div class="container">
@@ -122,11 +122,11 @@
 						<div class="main-menu text-center">
 							<nav>
 								<ul>
-									<li><a  href="#">home <i class="zmdi zmdi-chevron-down"></i></a>
+									<li><a  href="{% url 'home' %}">home</a>
 										<!-- Sub Menu -->
 
 									</li>
-									<li><a href="#" >shop <i class="zmdi zmdi-chevron-down"></i></a>
+									<li><a href="{% url 'shop' %}" >shop <i class="zmdi zmdi-chevron-down"></i></a>
 										<!-- Mega Menu -->
 										<div class="mega-menu mm-5-column mm-left">
 											<div class="mm-column mm-column-link float-left">
@@ -162,33 +162,7 @@
 											</div>
 										</div>
 									</li>
-									<li><a href="#">men <i class="zmdi zmdi-chevron-down"></i></a>
-										<!-- Mega Menu -->
-										<div class="mega-menu mm-4-column mm-left">
-											<div class="mm-column mm-column-link float-left">
-												<h3>women</h3>
-												<a href="#">Cocktail</a>
-												<a href="#">Sunglass</a>
-												<a href="#">Evening</a>
-												<a href="#">Footwear</a>
-												<a href="#">Bootees Bags</a>
-												<a href="#">Furniture</a>
-											</div>
-											<div class="mm-column mm-column-link float-left">
-												<h3>accessories</h3>
-												<a href="#">gagets</a>
-												<a href="#">laptop</a>
-												<a href="#">mobile</a>
-												<a href="#">lifestyle</a>
-												<a href="#">jens pant’s</a>
-												<a href="#">sports items</a>
-											</div>
-											<div class="mm-column mm-column-banner float-left">
-												<a href="#"><img src="{% static 'img/menu-banner/1.jpg' %}" alt="banner" /></a>
-												<a href="#"><img src="{% static 'img/menu-banner/2.jpg' %}" alt="banner" /></a>
-											</div>
-										</div>
-									</li>
+
 									<li><a href="#">shortcode <i class="zmdi zmdi-chevron-down"></i></a>
 										<!-- Mega Menu -->
 										<div class="mega-menu mega-menu-link-2 mm-right">
@@ -265,7 +239,7 @@
 										<li><a href="index.html">home 1</a></li>
 									</ul>
 								</li>
-								<li><a href="#">shop</a>
+								<li><a href="{% url 'shop' %}">shop</a>
 									<ul>
 										<li><a href="#">men</a>
 											<ul>
