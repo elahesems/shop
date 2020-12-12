@@ -15,7 +15,7 @@
 <div class="as-mainwrapper">
 <!-- Header
 ============================================ -->
-<div class="header transparent fixed" {% if isHomePage %} style="position: absolute" {% else %}  style="position: static; background-image: url({% static 'img/ec-background/ee.jpg'%})"  {% endif %}>
+<div class="header transparent fixed" {% if isHomePage %} style="position: absolute" {% else %}  style="position: static; background-image: url({% static 'img/ec-background/2.jpg'%})"  {% endif %}>
 	<!-- Header Top -->
 	<div class="header-top">
 		<div class="container">
@@ -24,6 +24,8 @@
 					<!-- Header Language Currency -->
 					<ul class="header-lan-cur float-left">
 						<!-- Header Language -->
+						<span style="color: #0b0b0b;margin-right:350px">Welcome To XOSS , {{request.user}}</span>
+
 						<li><a href="#">eng <i class="zmdi zmdi-chevron-down"></i></a>
 							<ul class="top-sub-menu sub-menu-left">
 								<li><a href="#">bengali</a></li>
@@ -83,8 +85,10 @@
 					</div>
 					<!-- Header Account Login -->
 					<div class="header-account-login float-right">
+
 						<!-- Header Account -->
 						<ul class="header-acc float-left">
+
 							<li><a href="#">my account <i class="zmdi zmdi-chevron-down"></i></a>
 								<ul class="top-sub-menu sub-menu-right">
 									<li><a href="#">my bag</a></li>
@@ -95,12 +99,15 @@
 						</ul>
 						<!-- Header Login -->
 						<div class="header-login float-left text-center">
+
+
 							<a href="#">login <i class="zmdi zmdi-chevron-down"></i></a>
 							<div class="header-login-opt top-sub-menu sub-menu-right">
 								<h5>login or register</h5>
-								<a class="button small" href="#">login</a>
+								<a class="button small" href="{% url 'login' %}">login</a>
 								<span>or</span>
-								<a class="button small transparent" href="#">create account</a>
+								<a class="button small transparent" href="{% url 'register' %}">create account</a><br>
+								<a class="button small transparentt" href="{% url 'logout' %}">Logout</a>
 							</div>
 						</div>
 					</div>
@@ -218,8 +225,8 @@
 											</div>
 											<div class="mm-column mm-column-link float-left">
 												<h4>other pages</h4>
-												<a href="#">about us</a>
-												<a href="#">contact</a>
+												<a href="{% url 'about' %}">about us</a>
+												<a href="{% url 'seyirci' %}">contact</a>
 												<a href="#">coming soon</a>
 												<a href="#">404</a>
 											</div>
@@ -319,7 +326,7 @@
 								<li><a href="#">pages</a>
 									<!-- Sub Menu -->
 									<ul>
-										<li><a href="#">about us</a></li>
+										<li><a href="{% url 'about' %}">about us</a></li>
 										<li><a href="#">blog</a></li>
 										<li><a href="#">blog left sidebar</a></li>
 										<li><a href="#">blog right sidebar</a></li>

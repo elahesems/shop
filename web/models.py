@@ -129,3 +129,28 @@ class Seyirci(models.Model):
 
     class Meta:
         verbose_name_plural = "ConTaCt"
+
+
+class AboutUs(models.Model):
+    title = models.CharField(max_length=200)
+    paragraph1 = models.TextField(max_length=None,null=True,blank=True)
+    detail = models.TextField(max_length=None,null=True,blank=True)
+    img = models.ImageField(verbose_name='resim')
+
+    class Meta:
+        verbose_name_plural = "AboutUs"
+
+
+class Team_member(models.Model):
+    team_name = models.CharField(max_length=100)
+    manager = models.CharField(max_length=100)
+    detail = models.CharField(max_length=400)
+    img = models.ImageField(verbose_name='resim')
+    facebook = models.URLField(null=True, blank=True)
+    twitter = models.URLField(null=True, blank=True)
+    vimeo = models.URLField(null=True, blank=True)
+    tumblr = models.URLField(null=True, blank=True)
+    pinterest = models.URLField(null=True, blank=True)
+
+    class Meta:
+        verbose_name_plural = "TeamMember"

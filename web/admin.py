@@ -34,6 +34,15 @@ class ModifiedBrands(admin.ModelAdmin):
 
 
 
+class ModifiedTeam_member(admin.ModelAdmin):
+    list_display = ('team_name',)# extra fields in the admin
+    list_filter = ('team_name',) #filters
+    search_fields = ('team_name',) #bu alanlar üzerinde search yapılacaktır
+    # date_hierarchy = 'inDate' #navigate quickly through a date hierarchy.
+    ordering = ['id'] #order the list by 'appStatus' and then 'appDate'
+
+
+
 
 
 admin.site.register(Sliders,ModifiedSlider)
@@ -42,4 +51,6 @@ admin.site.register(Brands,ModifiedBrands)
 admin.site.register(Designer,ModifiedDesigner)
 admin.site.register(Footer)
 admin.site.register(Seyirci)
+admin.site.register(AboutUs)
+admin.site.register(Team_member,ModifiedTeam_member)
 

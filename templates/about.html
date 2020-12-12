@@ -1,0 +1,83 @@
+{% extends 'master.html' %}
+{% load static%}
+{% block content %}
+<body>
+
+
+<!-- Page Breadcrumb Area
+============================================ -->
+<div class="page-breadcrumb bg-off-white">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12">
+				<ul class="breadcrumbs">
+					<li><a href="{% url 'home' %}">home</a></li>
+					<li><span>about us</span></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- About Page
+============================================ -->
+<div class="about-page bg-off-white fix">
+
+	<div class="about-us-area margin-bottom-90">
+		{% for about in about %}
+		<div class="container">
+			<div class="row">
+				<div class="about-content col-md-6 col-xs-12">
+					<h2>{{ about.title }}</h2>
+					<p>{{ about.paragraph1 }}</p>
+					<p>{{ about.detail }}</p>
+				</div>
+				<div class="about-image col-md-6 col-xs-12"><img src="{{ about.img.url }}" alt="" /></div>
+			</div>
+		</div>
+		{% endfor %}
+	</div>
+
+	<div class="team-area margin-bottom-90">
+		<div class="container">
+			<div class="row">
+				<!-- Section Title -->
+				<div class="section-title col-xs-12 text-center"><h1>our team member</h1></div>
+				<div class="sin-team col-md-3 col-sm-6 col-xs-12">
+					<div class="team-wrap">
+						<div class="team-image"><img src="img/team/1.jpg" alt="" /></div>
+						<div class="team-details">
+							<h3>{{ Team_member.team_name }}</h3>
+							<h4>{{ Team_member.manager }}</h4>
+							<p>{{ Team_member.detail }}</p>
+							<div class="team-social">
+								<a class="facebook" href="{{ Team_member.facebook }}"><i class="zmdi zmdi-facebook"></i></a>
+								<a class="twitter" href="{{ Team_member.twitter }}"><i class="zmdi zmdi-twitter"></i></a>
+								<a class="vimeo" href="{{ Team_member.vimeo }}"><i class="zmdi zmdi-vimeo"></i></a>
+								<a class="tumblr" href="{{ Team_member.tumblr }}"><i class="zmdi zmdi-tumblr"></i></a>
+								<a class="pinterest" href="{{ Team_member.pinterest }}"><i class="zmdi zmdi-pinterest"></i></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Brand Area
+============================================ -->
+<div class="brand-area" style="position: static; background-image: url({% static 'img/b3.jpg'%})">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="brand-slider">
+					{% for brands in brands %}
+					<div class="sin-brand"><img src="{{ brands.brandslogo.url }}" alt="" /></div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+</body>
+{% endblock %}
