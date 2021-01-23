@@ -10,7 +10,7 @@ class ModifiedSlider(admin.ModelAdmin):
     ordering = ['id'] #order the list by 'appStatus' and then 'appDate'
     #prepopulated_fields = {'slugName': ('title2',)} # write slug of the given name automatically
 class ModifiedProduct(admin.ModelAdmin):
-    list_display = ('name','price','currency','inDate','status','brandsby',)# extra fields in the admin
+    list_display = ('name','price','currency','inDate','status','brandsby','designedby',)# extra fields in the admin
     list_filter = ('price','shoesSize','size',) #filters
     search_fields = ('name','markname',) #bu alanlar üzerinde search yapılacaktır
     date_hierarchy = 'inDate' #navigate quickly through a date hierarchy.
@@ -51,6 +51,5 @@ admin.site.register(Brands,ModifiedBrands)
 admin.site.register(Designer,ModifiedDesigner)
 admin.site.register(Footer)
 admin.site.register(Seyirci)
-admin.site.register(AboutUs)
 admin.site.register(Team_member,ModifiedTeam_member)
 

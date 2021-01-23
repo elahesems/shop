@@ -1,5 +1,6 @@
 from django.db import models
 from multiselectfield import MultiSelectField
+from colorfield.fields import ColorField
 # Create your models here.
 
 class Sliders(models.Model):
@@ -39,9 +40,9 @@ class Brands(models.Model):
 
 class Product(models.Model):
     currencyType=(
-        ('tl','TL'),
-        ('usd','USD'),
-        ('euro','EURO')
+        ('tl','₺'),
+        ('usd','$'),
+        ('euro','€')
     )
     categoryType = (
         ('kadin', 'kadin'),
@@ -50,6 +51,19 @@ class Product(models.Model):
         ('sport', 'sport'),
         ('aksesuar', 'aksesuar'),
         ('makyaj', 'makyaj'),
+    )
+    productCategory= (
+        ('jaket', 'jaket'),
+        ('pantolon', 'pantolon'),
+        ('gömlek', 'gömlek'),
+        ('mont', 'mont'),
+        ('kölye', 'kölye'),
+        ('halhal', 'halhal'),
+        ('bilezik', 'bilezik'),
+        ('küpe', 'küpe'),
+        ('saat', 'saat'),
+        ('etek', 'etek'),
+        ('gözlük', 'gözlük'),
     )
     shoesSizeChoices = (
         ('36', '36'),
@@ -72,30 +86,26 @@ class Product(models.Model):
         ('xxxl', 'xxxl')
 
     )
-    colorChoices = (
-        ('red', 'red'),
-        ('pink', 'pink'),
-        ('orange', 'orange'),
-        ('yellow', 'yellow'),
-        ('purple', 'purple'),
-        ('green', 'green'),
-        ('blue', 'blue'),
-        ('brown', 'brown'),
-        ('black', 'black'),
 
-    )
 
 
     name = models.CharField(max_length=100,verbose_name='ad')
     brandsby = models.ForeignKey(Brands, on_delete=models.CASCADE, verbose_name='brand', null=True, blank=True)
     price = models.IntegerField(max_length=100,verbose_name='fiyat')
+    oldprice = models.IntegerField(max_length=100,verbose_name='oldPrice',null=True,blank=True)
     currency = models.CharField(max_length=5,choices=currencyType, default='tl',verbose_name='kur')
     picture = models.ImageField('resim seçiniz', null=True, blank=True)
     designedby = models.ForeignKey(Designer,on_delete=models.CASCADE,verbose_name='tasarımcı', null=True, blank=True)
     category = MultiSelectField(choices=categoryType,verbose_name='kategoriler',null=True,blank=True)
+    productSpeciality= models.CharField(choices=productCategory,max_length=100,null=True,blank=True,verbose_name='ürün türü')
     shoesSize = MultiSelectField(choices=shoesSizeChoices,verbose_name='ayakkabı numarası',null=True,blank=True)
     size = MultiSelectField(choices=sizeChoices,verbose_name='size',null=True,blank=True)
-    color = MultiSelectField(choices=colorChoices,verbose_name='renk',null=True,blank=True)
+    colorField1 = ColorField(verbose_name='1.renk',null=True,blank=True)
+    colorField2 = ColorField(verbose_name='2.renk',null=True,blank=True)
+    colorField3 = ColorField(verbose_name='3.renk',null=True,blank=True)
+    colorField4 = ColorField(verbose_name='4.renk',null=True,blank=True)
+    productInformation = models.TextField(null=True,blank=True,verbose_name='ürün bilgileri')
+    description = models.TextField(null=True,blank=True,verbose_name='description')
     inDate = models.DateField(auto_now_add=True,null=True,blank=True,verbose_name='giriş tarihi')
     status = models.BooleanField(default=True,verbose_name='gösterilsin mi?')
 
@@ -131,16 +141,6 @@ class Seyirci(models.Model):
         verbose_name_plural = "ConTaCt"
 
 
-class AboutUs(models.Model):
-    title = models.CharField(max_length=200)
-    paragraph1 = models.TextField(max_length=None,null=True,blank=True)
-    detail = models.TextField(max_length=None,null=True,blank=True)
-    img = models.ImageField(verbose_name='resim')
-
-    class Meta:
-        verbose_name_plural = "AboutUs"
-
-
 class Team_member(models.Model):
     team_name = models.CharField(max_length=100)
     manager = models.CharField(max_length=100)
@@ -151,6 +151,8 @@ class Team_member(models.Model):
     vimeo = models.URLField(null=True, blank=True)
     tumblr = models.URLField(null=True, blank=True)
     pinterest = models.URLField(null=True, blank=True)
+    # inDate = models.DateField(auto_now_add=True,null=True,blank=True,verbose_name='giriş tarihi')
+
 
     class Meta:
         verbose_name_plural = "TeamMember"

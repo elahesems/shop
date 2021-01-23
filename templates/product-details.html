@@ -1,0 +1,546 @@
+{% extends 'master.html' %}
+{% load static%}
+{% block content %}
+<!-- Page Breadcrumb Area
+============================================ -->
+<div class="page-breadcrumb bg-off-white" xmlns="http://www.w3.org/1999/html">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12">
+				<ul class="breadcrumbs">
+					<li><a href="{% url 'home' %}">home</a></li>
+					<li><a href="#">category</a></li>
+					<li><span>product dedatils full width</span></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Product Details Area
+============================================ -->
+<div class="product-details-page product-details-page-sidebar bg-off-white padding-bottom-90">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-3 col-xs-12 sidebar-container float-right">
+				<div class="row">
+					<div class="col-md-12 col-sm-6 col-xs-12">
+						<div class="sin-sidebar category-sidebar">
+							<h3 class="sidebar-title">categories</h3>
+							<div class="sidebar-wrapper fix">
+							<!-- treeview start -->
+								<ul id="cat-treeview">
+									<li class="open"><a href="#">WoMen</a>
+										<ul>
+											<li><a href="#">Casual paint</a></li>
+											<li><a href="#">Lora dress</a></li>
+											<li><a href="#">Bikini</a></li>
+										</ul>
+									</li>
+									<li class="closed"><a href="#">Men</a>
+										<ul>
+											<li><a href="#">Shirts</a></li>
+											<li><a href="#">T-Shirts</a></li>
+											<li><a href="#">Bilazers</a></li>
+											<li><a href="#">Jackets</a></li>
+											<li><a href="#">Jeans</a></li>
+										</ul>
+									</li>
+									<li class="closed"><a href="#">Kids</a>
+										<ul>
+											<li><a href="#">Shirts</a></li>
+											<li><a href="#">T-Shirts</a></li>
+											<li><a href="#">Bilazers</a></li>
+											<li><a href="#">Jackets</a></li>
+											<li><a href="#">Jeans</a></li>
+										</ul>
+									</li>
+									<li class="closed"><a href="#">Jewelry</a>
+										<ul>
+											<li><a href="#">Rings</a></li>
+											<li><a href="#">Watches</a></li>
+											<li><a href="#">Utilities</a></li>
+										</ul>
+									</li>
+									<li class="closed"><a href="#">Accessories</a>
+										<ul>
+											<li><a href="#">Footwear</a></li>
+											<li><a href="#">Sunglasses</a></li>
+											<li><a href="#">Watches</a></li>
+											<li><a href="#">Utilities</a></li>
+										</ul>
+									</li>
+									<li class="closed"><a href="#">Trends</a>
+										<ul>
+											<li><a href="#">Shirts</a></li>
+											<li><a href="#">T-Shirts</a></li>
+											<li><a href="#">Bilazers</a></li>
+											<li><a href="#">Jackets</a></li>
+											<li><a href="#">Jeans</a></li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-12 col-sm-6 col-xs-12">
+						<div class="sin-sidebar brand-sidebar">
+							<h3 class="sidebar-title">POPULAR BRAND</h3>
+							<div class="sidebar-wrapper fix">
+								<ul class="cus-scroll">
+									<li><a href="#">rayban</a></li>
+									<li><a href="#">denim</a></li>
+									<li><a href="#">polo</a></li>
+									<li><a href="#">adiddas</a></li>
+									<li><a href="#">nike</a></li>
+									<li><a href="#">gucci</a></li>
+									<li><a href="#">cats eye</a></li>
+									<li><a href="#">rayban</a></li>
+									<li><a href="#">denim</a></li>
+									<li><a href="#">polo</a></li>
+									<li><a href="#">adiddas</a></li>
+									<li><a href="#">nike</a></li>
+									<li><a href="#">gucci</a></li>
+									<li><a href="#">cats eye</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-12 col-sm-6 col-xs-12 hidden-sm">
+						<div class="sin-sidebar banner-sidebar">
+							<div class="sin-banner banner-style-1">
+								<a href="#" class="banner-wrap">
+									<img src="{% static 'img/product/1.jpg' %}" alt="" />
+									<div class="banner-bref banner-bref-1 text-center">
+										<h1>20%off<br />on t-shirt</h1>
+									</div>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-9 col-xs-12 product-details-container">
+				<div class="row">
+					<div class="product-details-image col-md-6 col-xs-12">
+						<div class="pro-img-big fix">
+							<img src="{{ product.picture.url }}" alt="" data-zoom-image="img/product-details/full-2.jpg" />
+						</div>
+						<div class="pro-img-thumb thumb-horizontal" id="pro-img-thumb">
+							<a class="active" href="#" data-image="img/product-details/big-2.jpg" data-zoom-image="img/product-details/full-2.jpg"><img src="img/product-details/thumb-2.jpg" alt="" /></a>
+							<a href="#" data-image="img/product-details/big-1.jpg" data-zoom-image="img/product-details/full-1.jpg"><img src="img/product-details/thumb-1.jpg" alt="" /></a>
+							<a href="#" data-image="img/product-details/big-3.jpg" data-zoom-image="img/product-details/full-3.jpg"><img src="img/product-details/thumb-3.jpg" alt="" /></a>
+							<a href="#" data-image="img/product-details/big-4.jpg" data-zoom-image="img/product-details/full-4.jpg"><img src="img/product-details/thumb-4.jpg" alt="" /></a>
+						</div>
+					</div>
+					<div class="product-details-content col-md-6 col-xs-12">
+
+						<a class="pro-details-title" href="#">Full sleev women shirt</a>
+						<div class="pro-details-price-ratting fix">
+							<!-- Product Price -->
+
+							<div class="pro-details-price float-left">
+								<span class="new">{{ product.currency }} {{ product.price }}</span>
+								<span class="old">{{ product.oldprice }} </span>
+							</div>
+
+							<!-- Product Ratting -->
+							<div class="pro-details-ratting float-right">
+								<div class="rattings float-left">
+									<i class="zmdi zmdi-star"></i>
+									<i class="zmdi zmdi-star"></i>
+									<i class="zmdi zmdi-star"></i>
+									<i class="zmdi zmdi-star"></i>
+									<i class="zmdi zmdi-star-half"></i>
+								</div>
+								<span>(5)</span>
+							</div>
+						</div>
+						<div class="pro-details-overview">
+							<h4>Ürün Bilgileri:</h4>
+							<h5>{{product.name}}</h5>
+							<p>{{product.productInformation}}</p>
+							<h4>Ürün Türü: <p>{{product.productSpeciality}}</p></h4>
+
+						</div>
+						<div class="pro-details-size fix">
+							<h5>size:</h5>
+							<a href="#">{{product.size}}</a>
+
+
+
+						</div>
+						<div class="pro-details-color-quantity fix">
+							<div class="pro-details-color float-left">
+								<h5>color:</h5>
+								<a href="#" style="background: {{product.colorField1}};">color 1</a>
+								<a href="#" style="background: {{product.colorField2}};">color 2</a>
+								<a href="#" style="background: {{product.colorField3}};">color 3</a>
+								<a href="#" style="background: {{product.colorField4}};">color 3</a>
+							</div>
+							<div class="pro-details-quantity float-left">
+								<h5>quantity:</h5>
+								<div class="pro-qty float-left fix">
+									<input type="text" value="0" name="qtybutton" class="cart-plus-minus-box">
+								</div>
+							</div>
+						</div>
+						<!-- Product Action -->
+						<div class="pro-details-action fix">
+							<button class="pro-details-act-btn btn-text">add to bag</button>
+							<button class="pro-details-act-btn btn-icon"><i class="zmdi zmdi-favorite-outline"></i></button>
+							<button class="pro-details-act-btn btn-icon"><i class="zmdi zmdi-refresh"></i></button>
+						</div>
+						<div class="pro-details-share fix">
+							<h5>share this on:</h5>
+							<div class="footer-social">
+								<a class="facebook" href="https://www.facebook.com/"><i class="zmdi zmdi-facebook"></i></a>
+								<a class="twitter" href="https://twitter.com/"><i class="zmdi zmdi-twitter"></i></a>
+								<a class="vimeo" href="https://vimeo.com/"><i class="zmdi zmdi-vimeo"></i></a>
+								<a class="google-plus" href="https://myaccount.google.com/"><i class="zmdi zmdi-google-plus"></i></a>
+								<a class="tumblr" href="https://www.tumblr.com/"><i class="zmdi zmdi-tumblr"></i></a>
+								<a class="pinterest" href="https://tr.pinterest.com/"><i class="zmdi zmdi-pinterest"></i></a>
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-12 margin-top-30">
+						<div class="pro-details-tab-container fix">
+							<ul class="pro-details-tablist fix">
+								<li class="active"><a href="#description" data-toggle="tab">description</a></li>
+								<li><a href="#reviews" data-toggle="tab">reviews</a></li>
+							</ul>
+							<div class="tab-content fix">
+								<!-- Product Info Tab -->
+								<div id="description" class="pro-details-tab pro-dsc-tab tab-pane active">
+									<p>
+										<p><li>{{ product.description }}</li></p>
+
+								</div>
+
+								<!-- Product Info Tab -->
+								<div id="reviews" class="pro-details-tab pro-rev-tab tab-pane">
+									<div class="pro-avg-ratting fix">
+										<h4>4.5 <span>(Overall)</span></h4>
+										<span>Based on 9 Comments</span>
+									</div>
+									<div class="ratting-list fix">
+										<div class="sin-list float-left">
+											<i class="zmdi zmdi-star"></i>
+											<i class="zmdi zmdi-star"></i>
+											<i class="zmdi zmdi-star"></i>
+											<i class="zmdi zmdi-star"></i>
+											<i class="zmdi zmdi-star"></i>
+											<span>(5)</span>
+										</div>
+										<div class="sin-list float-left">
+											<i class="zmdi zmdi-star"></i>
+											<i class="zmdi zmdi-star"></i>
+											<i class="zmdi zmdi-star"></i>
+											<i class="zmdi zmdi-star"></i>
+											<i class="zmdi zmdi-star-outline"></i>
+											<span>(3)</span>
+										</div>
+										<div class="sin-list float-left">
+											<i class="zmdi zmdi-star"></i>
+											<i class="zmdi zmdi-star"></i>
+											<i class="zmdi zmdi-star"></i>
+											<i class="zmdi zmdi-star-outline"></i>
+											<i class="zmdi zmdi-star-outline"></i>
+											<span>(1)</span>
+										</div>
+										<div class="sin-list float-left">
+											<i class="zmdi zmdi-star-outline"></i>
+											<i class="zmdi zmdi-star-outline"></i>
+											<i class="zmdi zmdi-star-outline"></i>
+											<i class="zmdi zmdi-star-outline"></i>
+											<i class="zmdi zmdi-star-outline"></i>
+											<span>(0)</span>
+										</div>
+										<div class="sin-list float-left">
+											<i class="zmdi zmdi-star-outline"></i>
+											<i class="zmdi zmdi-star-outline"></i>
+											<i class="zmdi zmdi-star-outline"></i>
+											<i class="zmdi zmdi-star-outline"></i>
+											<i class="zmdi zmdi-star-outline"></i>
+											<span>(0)</span>
+										</div>
+									</div>
+									<div class="rattings-wrapper fix">
+										<div class="sin-rattings">
+											<div class="ratting-star float-left">
+												<i class="zmdi zmdi-star"></i>
+												<i class="zmdi zmdi-star"></i>
+												<i class="zmdi zmdi-star"></i>
+												<i class="zmdi zmdi-star"></i>
+												<i class="zmdi zmdi-star"></i>
+											<span>(5)</span>
+											</div>
+											<div class="ratting-author float-right">
+												<h3>Nirob Khan</h3>
+												<span>12:24</span>
+												<span>5 March 2016</span>
+											</div>
+											<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Utenim ad minim veniam, quis nost rud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Utenim ad minim veniam, quis nost.</p>
+										</div>
+										<div class="sin-rattings">
+											<div class="ratting-star float-left">
+												<i class="zmdi zmdi-star"></i>
+												<i class="zmdi zmdi-star"></i>
+												<i class="zmdi zmdi-star"></i>
+												<i class="zmdi zmdi-star"></i>
+												<i class="zmdi zmdi-star"></i>
+											<span>(5)</span>
+											</div>
+											<div class="ratting-author float-right">
+												<h3>Nirob Khan</h3>
+												<span>12:24</span>
+												<span>5 March 2016</span>
+											</div>
+											<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Utenim ad minim veniam, quis strud. incididunt ut labore et dolore magna aliqua. Utenim ad minim veniam, quis nostrud.</p>
+										</div>
+										<div class="sin-rattings">
+											<div class="ratting-star float-left">
+												<i class="zmdi zmdi-star"></i>
+												<i class="zmdi zmdi-star"></i>
+												<i class="zmdi zmdi-star"></i>
+												<i class="zmdi zmdi-star"></i>
+												<i class="zmdi zmdi-star"></i>
+											<span>(5)</span>
+											</div>
+											<div class="ratting-author float-right">
+												<h3>Nirob Khan</h3>
+												<span>12:24</span>
+												<span>5 March 2016</span>
+											</div>
+											<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Utenim ad minim veniam, quis strud. incididunt ut labore et dolore magna aliqua. Utenim ad minim veniam, quis nostrud.</p>
+										</div>
+									</div>
+									<div class="ratting-form-wrapper fix">
+										<h3>Add your Comments</h3>
+										<div class="ratting-form ratting-sidebar-form">
+											<form action="#">
+												<div class="star-box">
+													<h2>Rating:</h2>
+													<div class="ratting-star fix">
+														<i class="zmdi zmdi-star-outline"></i>
+														<i class="zmdi zmdi-star-outline"></i>
+														<i class="zmdi zmdi-star-outline"></i>
+														<i class="zmdi zmdi-star-outline"></i>
+														<i class="zmdi zmdi-star-outline"></i>
+													</div>
+												</div>
+												<div class="input-box-2 fix">
+													<div class="input-box float-left">
+														<label for="name">Name:</label>
+														<input type="text" id="name" placeholder="Type your name" />
+													</div>
+													<div class="input-box float-left">
+														<label for="email">Email:</label>
+														<input type="text" id="email" placeholder="Type your email address" />
+													</div>
+												</div>
+												<div class="input-box review-box fix">
+													<label for="your-review">Your Review:</label>
+													<textarea name="review" id="your-review" placeholder="Write a review"></textarea>
+												</div>
+												<div class="input-box submit-box fix">
+													<input type="submit" value="add review" />
+												</div>
+											</form>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+<!-- Suggested Product Area
+============================================ -->
+<div class="suggested-product-area padding-90">
+	<div class="container">
+		<div class="row">
+			<!-- Section Title -->
+			<div class="section-title col-xs-12 text-center"><h1>SUGGESTED products</h1></div>
+			<div class="col-xs-12">
+				<!-- Product Slider -->
+				<div class="product-slider suggested-slider">
+					<!-- Single Product -->
+					<div class="sin-pro">
+						<!-- Product Image -->
+						<div class="sin-pro-img-action fix">
+							<a href="#" class="sin-pro-img"><img src="img/product/1.jpg" alt="" /></a>
+							<a href="#pro-quick-view" class="pro-quick-view" data-toggle="modal"><i class="zmdi zmdi-plus-circle-o"></i></a>
+							<!-- Product Action -->
+							<div class="sin-pro-action">
+								<button class="pro-act-btn btn-icon"><i class="zmdi zmdi-refresh"></i></button>
+								<button class="pro-act-btn btn-text">add to bag</button>
+								<button class="pro-act-btn btn-icon"><i class="zmdi zmdi-favorite-outline"></i></button>
+							</div>
+						</div>
+						<!-- Product Details -->
+						<div class="sin-pro-details fix">
+							<a class="sin-pro-title" href="#">Full sleev women shirt</a>
+							<!-- Product Price -->
+							<div class="sin-pro-price float-left">
+								<span class="new">$ 85.00</span>
+							</div>
+							<!-- Product Ratting -->
+							<div class="sin-pro-ratting float-right">
+								<div class="rattings float-left">
+									<i class="zmdi zmdi-star"></i>
+									<i class="zmdi zmdi-star"></i>
+									<i class="zmdi zmdi-star"></i>
+									<i class="zmdi zmdi-star"></i>
+									<i class="zmdi zmdi-star-half"></i>
+								</div>
+								<span>(23)</span>
+							</div>
+						</div>
+					</div>
+					<!-- Single Product -->
+					<div class="sin-pro">
+						<!-- Product Image -->
+						<div class="sin-pro-img-action fix">
+							<a href="#" class="sin-pro-img"><img src="img/product/2.jpg" alt="" /></a>
+							<span class="pro-label label-new">new</span>
+							<a href="#pro-quick-view" class="pro-quick-view" data-toggle="modal"><i class="zmdi zmdi-plus-circle-o"></i></a>
+							<!-- Product Action -->
+							<div class="sin-pro-action">
+								<button class="pro-act-btn btn-icon"><i class="zmdi zmdi-refresh"></i></button>
+								<button class="pro-act-btn btn-text">add to bag</button>
+								<button class="pro-act-btn btn-icon"><i class="zmdi zmdi-favorite-outline"></i></button>
+							</div>
+						</div>
+						<!-- Product Details -->
+						<div class="sin-pro-details fix">
+							<a class="sin-pro-title" href="#">Loafers Men's shoes</a>
+							<!-- Product Price -->
+							<div class="sin-pro-price float-left">
+								<span class="new">$ 45.00</span>
+							</div>
+							<!-- Product Ratting -->
+							<div class="sin-pro-ratting float-right">
+								<div class="rattings float-left">
+									<i class="zmdi zmdi-star"></i>
+									<i class="zmdi zmdi-star"></i>
+									<i class="zmdi zmdi-star"></i>
+									<i class="zmdi zmdi-star"></i>
+									<i class="zmdi zmdi-star-half"></i>
+								</div>
+								<span>(5)</span>
+							</div>
+						</div>
+					</div>
+					<!-- Single Product -->
+					<div class="sin-pro">
+						<!-- Product Image -->
+						<div class="sin-pro-img-action fix">
+							<a href="#" class="sin-pro-img"><img src="img/product/3.jpg" alt="" /></a>
+							<span class="pro-label label-new">new</span>
+							<a href="#pro-quick-view" class="pro-quick-view" data-toggle="modal"><i class="zmdi zmdi-plus-circle-o"></i></a>
+							<!-- Product Action -->
+							<div class="sin-pro-action">
+								<button class="pro-act-btn btn-icon"><i class="zmdi zmdi-refresh"></i></button>
+								<button class="pro-act-btn btn-text">add to bag</button>
+								<button class="pro-act-btn btn-icon"><i class="zmdi zmdi-favorite-outline"></i></button>
+							</div>
+						</div>
+						<!-- Product Details -->
+						<div class="sin-pro-details fix">
+							<a class="sin-pro-title" href="#">Women’s handbag</a>
+							<!-- Product Price -->
+							<div class="sin-pro-price float-left">
+								<span class="new">$ 99.99</span>
+								<span class="old">145.00</span>
+							</div>
+							<!-- Product Ratting -->
+							<div class="sin-pro-ratting float-right">
+								<div class="rattings float-left">
+									<i class="zmdi zmdi-star"></i>
+									<i class="zmdi zmdi-star"></i>
+									<i class="zmdi zmdi-star"></i>
+									<i class="zmdi zmdi-star"></i>
+									<i class="zmdi zmdi-star-half"></i>
+								</div>
+								<span>(23)</span>
+							</div>
+						</div>
+					</div>
+					<!-- Single Product -->
+					<div class="sin-pro">
+						<!-- Product Image -->
+						<div class="sin-pro-img-action fix">
+							<a href="#" class="sin-pro-img"><img src="img/product/4.jpg" alt="" /></a>
+							<a href="#pro-quick-view" class="pro-quick-view" data-toggle="modal"><i class="zmdi zmdi-plus-circle-o"></i></a>
+							<!-- Product Action -->
+							<div class="sin-pro-action">
+								<button class="pro-act-btn btn-icon"><i class="zmdi zmdi-refresh"></i></button>
+								<button class="pro-act-btn btn-text">add to bag</button>
+								<button class="pro-act-btn btn-icon"><i class="zmdi zmdi-favorite-outline"></i></button>
+							</div>
+						</div>
+						<!-- Product Details -->
+						<div class="sin-pro-details fix">
+							<a class="sin-pro-title" href="#">Women’s winter dress</a>
+							<!-- Product Price -->
+							<div class="sin-pro-price float-left">
+								<span class="new">$ 45.00</span>
+							</div>
+							<!-- Product Ratting -->
+							<div class="sin-pro-ratting float-right">
+								<div class="rattings float-left">
+									<i class="zmdi zmdi-star-outline"></i>
+									<i class="zmdi zmdi-star-outline"></i>
+									<i class="zmdi zmdi-star-outline"></i>
+									<i class="zmdi zmdi-star-outline"></i>
+									<i class="zmdi zmdi-star-outline"></i>
+								</div>
+								<span>(0)</span>
+							</div>
+						</div>
+					</div>
+					<!-- Single Product -->
+					<div class="sin-pro">
+						<!-- Product Image -->
+						<div class="sin-pro-img-action fix">
+							<a href="#" class="sin-pro-img"><img src="img/product/3.jpg" alt="" /></a>
+							<span class="pro-label label-new">new</span>
+							<a href="#pro-quick-view" class="pro-quick-view" data-toggle="modal"><i class="zmdi zmdi-plus-circle-o"></i></a>
+							<!-- Product Action -->
+							<div class="sin-pro-action">
+								<button class="pro-act-btn btn-icon"><i class="zmdi zmdi-refresh"></i></button>
+								<button class="pro-act-btn btn-text">add to bag</button>
+								<button class="pro-act-btn btn-icon"><i class="zmdi zmdi-favorite-outline"></i><i class="zmdi zmdi-favorite-outline"></i></button>
+							</div>
+						</div>
+						<!-- Product Details -->
+						<div class="sin-pro-details fix">
+							<a class="sin-pro-title" href="#">Full sleev women shirt</a>
+							<!-- Product Price -->
+							<div class="sin-pro-price float-left">
+								<span class="new">$ 85.00</span>
+							</div>
+							<!-- Product Ratting -->
+							<div class="sin-pro-ratting float-right">
+								<div class="rattings float-left">
+									<i class="zmdi zmdi-star"></i>
+									<i class="zmdi zmdi-star"></i>
+									<i class="zmdi zmdi-star"></i>
+									<i class="zmdi zmdi-star"></i>
+									<i class="zmdi zmdi-star-half"></i>
+								</div>
+								<span>(23)</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

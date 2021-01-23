@@ -66,125 +66,46 @@
 				<div class="tab-pane active" id="{{ category }}">
 					<!-- Single Product -->
 <!---*******************************************************************************************************************************************************************************************************************************************************-->
-					{% for product in kadinList %}
+					{% for product in products %}
 						{% lastDayAdded product %}
-					<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+						<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
 
-						<div class="sin-pro">
-							<!-- Product Image -->
-							<div class="sin-pro-img-action fix">
-								<a href="#" class="sin-pro-img"><img style="width: 262px; height: 350px" {% if product.picture %} src="{{ product.picture.url }}"{% else %} src="{% static 'img/no-image.png' %}" {% endif %} alt="" /></a>
-								<a href="#pro-quick-view" class="pro-quick-view" data-toggle="modal"><i class="zmdi zmdi-plus-circle-o"></i></a>
-								<!-- Product Action -->
-								<div class="sin-pro-action">
-									<button class="pro-act-btn btn-icon"><i class="zmdi zmdi-refresh"></i></button>
-									<button class="pro-act-btn btn-text">add to bag</button>
-									<button class="pro-act-btn btn-icon"><i class="zmdi zmdi-favorite-outline"></i></button>
-								</div>
-							</div>
-							<!-- Product Details -->
-							<div class="sin-pro-details fix">
-								<a class="sin-pro-title" href="#">{{product.name}}</a>
-								<!-- Product Price -->
-								<div class="sin-pro-price float-left">
-									<span class="new">{{product.price}} {{product.currency}}</span>
-								</div>
-								<!-- Product Ratting -->
-								<div class="sin-pro-ratting float-right">
-									<div class="rattings float-left">
-										<i class="zmdi zmdi-star"></i>
-										<i class="zmdi zmdi-star"></i>
-										<i class="zmdi zmdi-star"></i>
-										<i class="zmdi zmdi-star"></i>
-										<i class="zmdi zmdi-star-half"></i>
+							<div class="sin-pro">
+								<!-- Product Image -->
+								<div class="sin-pro-img-action fix">
+									<a href="{% url 'product_details' product.id %}" class="sin-pro-img"><img style="width: 262px; height: 350px" {% if product.picture %} src="{{ product.picture.url }}"{% else %} src="{% static 'img/no-image.png' %}" {% endif %} alt="" /></a>
+									<a href="{% url 'product_details' product.id %}" class="pro-quick-view" data-toggle="modal"><i class="zmdi zmdi-plus-circle-o"></i></a>
+									<!-- Product Action -->
+									<div class="sin-pro-action">
+										<button class="pro-act-btn btn-icon"><i class="zmdi zmdi-refresh"></i></button>
+										<button class="pro-act-btn btn-text">add to bag</button>
+										<button class="pro-act-btn btn-icon"><i class="zmdi zmdi-favorite-outline"></i></button>
 									</div>
-									<span>(23)</span>
+								</div>
+								<!-- Product Details -->
+								<div class="sin-pro-details fix">
+									<a class="sin-pro-title" href="#">{{product.name}}</a>
+									<!-- Product Price -->
+									<div class="sin-pro-price float-left">
+										<span class="new">{{product.price}} {{product.currency}}</span>
+									</div>
+									<!-- Product Ratting -->
+									<div class="sin-pro-ratting float-right">
+										<div class="rattings float-left">
+											<i class="zmdi zmdi-star"></i>
+											<i class="zmdi zmdi-star"></i>
+											<i class="zmdi zmdi-star"></i>
+											<i class="zmdi zmdi-star"></i>
+											<i class="zmdi zmdi-star-half"></i>
+										</div>
+										<span>(23)</span>
+									</div>
 								</div>
 							</div>
 						</div>
-					</div>
 					{% endfor %}
 
 
-
-<!---*******************************************************************************************************************************************************************************************************************************************************-->
-<!--					&lt;!&ndash; Single Product &ndash;&gt;
-					<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-						<div class="sin-pro">
-							&lt;!&ndash; Product Image &ndash;&gt;
-							<div class="sin-pro-img-action fix">
-								<a href="#" class="sin-pro-img"><img src="{% static 'img/product/2.jpg' %}" alt="" /></a>
-								<span class="pro-label label-new">new</span>
-								<a href="#pro-quick-view" class="pro-quick-view" data-toggle="modal"><i class="zmdi zmdi-plus-circle-o"></i></a>
-								&lt;!&ndash; Product Action &ndash;&gt;
-								<div class="sin-pro-action">
-									<button class="pro-act-btn btn-icon"><i class="zmdi zmdi-refresh"></i></button>
-									<button class="pro-act-btn btn-text">add to bag</button>
-									<button class="pro-act-btn btn-icon"><i class="zmdi zmdi-favorite-outline"></i></button>
-								</div>
-							</div>
-							&lt;!&ndash; Product Details &ndash;&gt;
-							<div class="sin-pro-details fix">
-								<a class="sin-pro-title" href="#">Loafers Men's shoes</a>
-								&lt;!&ndash; Product Price &ndash;&gt;
-								<div class="sin-pro-price float-left">
-									<span class="new">$ 45.00</span>
-								</div>
-								&lt;!&ndash; Product Ratting &ndash;&gt;
-								<div class="sin-pro-ratting float-right">
-									<div class="rattings float-left">
-										<i class="zmdi zmdi-star"></i>
-										<i class="zmdi zmdi-star"></i>
-										<i class="zmdi zmdi-star"></i>
-										<i class="zmdi zmdi-star"></i>
-										<i class="zmdi zmdi-star-half"></i>
-									</div>
-									<span>(5)</span>
-								</div>
-							</div>
-						</div>
-					</div>
-					-->
-<!---*******************************************************************************************************************************************************************************************************************************************************-->
-<!--
-					&lt;!&ndash; Single Product &ndash;&gt;
-					<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-						<div class="sin-pro">
-							&lt;!&ndash; Product Image &ndash;&gt;
-							<div class="sin-pro-img-action fix">
-								<a href="#" class="sin-pro-img"><img src="{% static 'img/product/3.jpg' %}" alt="" /></a>
-								<span class="pro-label label-new">new</span>
-								<a href="#pro-quick-view" class="pro-quick-view" data-toggle="modal"><i class="zmdi zmdi-plus-circle-o"></i></a>
-								&lt;!&ndash; Product Action &ndash;&gt;
-								<div class="sin-pro-action">
-									<button class="pro-act-btn btn-icon"><i class="zmdi zmdi-refresh"></i></button>
-									<button class="pro-act-btn btn-text">add to bag</button>
-									<button class="pro-act-btn btn-icon"><i class="zmdi zmdi-favorite-outline"></i></button>
-								</div>
-							</div>
-							&lt;!&ndash; Product Details &ndash;&gt;
-							<div class="sin-pro-details fix">
-								<a class="sin-pro-title" href="#">Women’s handbag</a>
-								&lt;!&ndash; Product Price &ndash;&gt;
-								<div class="sin-pro-price float-left">
-									<span class="new">$ 99.99</span>
-									<span class="old">145.00</span>
-								</div>
-								&lt;!&ndash; Product Ratting &ndash;&gt;
-								<div class="sin-pro-ratting float-right">
-									<div class="rattings float-left">
-										<i class="zmdi zmdi-star"></i>
-										<i class="zmdi zmdi-star"></i>
-										<i class="zmdi zmdi-star"></i>
-										<i class="zmdi zmdi-star"></i>
-										<i class="zmdi zmdi-star-half"></i>
-									</div>
-									<span>(23)</span>
-								</div>
-							</div>
-						</div>
-					</div>-->
-<!---*******************************************************************************************************************************************************************************************************************************************************-->
 
 <!--					&lt;!&ndash; Single Product &ndash;&gt;
 					<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">

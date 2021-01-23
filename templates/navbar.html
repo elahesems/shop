@@ -24,7 +24,7 @@
 					<!-- Header Language Currency -->
 					<ul class="header-lan-cur float-left">
 						<!-- Header Language -->
-						<span style="color: #0b0b0b;margin-right:350px">Welcome To XOSS , {{request.user}}</span>
+						<div><span style="color: #0b0b0b;margin-right:350px"> {% if request.user.is_authenticated %} Welcome To XOSS , {{request.user}} {% else %} Welcome To XOSS {% endif %}</span></div>
 
 						<li><a href="#">eng <i class="zmdi zmdi-chevron-down"></i></a>
 							<ul class="top-sub-menu sub-menu-left">
@@ -136,33 +136,36 @@
 									<li><a href="{% url 'shop' %}" >shop <i class="zmdi zmdi-chevron-down"></i></a>
 										<!-- Mega Menu -->
 										<div class="mega-menu mm-5-column mm-left">
-											<div class="mm-column mm-column-link float-left">
-												<h3>men</h3>
-												<a href="#">Blazers</a>
-												<a href="#">Jackets</a>
-												<a href="#">Collections</a>
-												<a href="#">T-Shirts</a>
-												<a href="#">jens pant’s</a>
-												<a href="#">sports shoes</a>
-											</div>
-											<div class="mm-column mm-column-link float-left">
-												<h3>women</h3>
-												<a href="#">Cocktail</a>
-												<a href="#">Sunglass</a>
-												<a href="#">Evening</a>
-												<a href="#">Footwear</a>
-												<a href="#">Bootees Bags</a>
-												<a href="#">Furniture</a>
-											</div>
-											<div class="mm-column mm-column-link float-left">
-												<h3>accessories</h3>
-												<a href="#">gagets</a>
-												<a href="#">laptop</a>
-												<a href="#">mobile</a>
-												<a href="#">lifestyle</a>
-												<a href="#">jens pant’s</a>
-												<a href="#">sports items</a>
-											</div>
+											{% for category in categories %}
+
+												<div class="mm-column mm-column-link float-left">
+													{% if category == 'kadin' %}
+														<h3>{{category}}</h3>
+														{% for product in womanListingPS|slice:":5" %}
+															<a href="{% url 'shop_detail' product.productSpeciality category %}">{{ product.productSpeciality }}</a>
+														{% endfor %}
+
+													{% endif %}
+													{% if category == 'erkek' %}
+														<h3>{{category}}</h3>
+
+														{% for product in manListingPS|slice:":5" %}
+															<a href="{% url 'shop_detail' product.productSpeciality category %}">{{ product.productSpeciality }}</a>
+														{% endfor %}
+
+													{% endif %}
+													{% if category == 'aksesuar' %}
+														<h3>{{category}}</h3>
+
+														{% for product in aksesuarListingPS|slice:":5" %}
+															<a href="{% url 'shop_detail' product.productSpeciality category %}">{{ product.productSpeciality  }}</a>
+														{% endfor %}
+
+													{% endif %}
+												</div>
+											{% endfor %}
+
+
 											<div class="mm-column mm-column-banner float-left">
 												<a href="#"><img src="{% static 'img/menu-banner/1.jpg' %}" alt="banner" /></a>
 												<a href="#"><img src="{% static 'img/menu-banner/2.jpg' %}" alt="banner" /></a>
@@ -212,8 +215,7 @@
 												<a href="#">cart</a>
 												<a href="#">check out</a>
 												<a href="#">product details</a>
-												<a href="#">product details left sidebar</a>
-												<a href="#">product details right sidebar</a>
+
 												<a href="#">wishlist</a>
 											</div>
 											<div class="mm-column mm-column-link float-left">
@@ -225,7 +227,7 @@
 											</div>
 											<div class="mm-column mm-column-link float-left">
 												<h4>other pages</h4>
-												<a href="{% url 'about' %}">about us</a>
+												<a href="{% url 'team_member' %}">about us</a>
 												<a href="{% url 'seyirci' %}">contact</a>
 												<a href="#">coming soon</a>
 												<a href="#">404</a>
@@ -326,7 +328,7 @@
 								<li><a href="#">pages</a>
 									<!-- Sub Menu -->
 									<ul>
-										<li><a href="{% url 'about' %}">about us</a></li>
+										<li><a href="{% url 'team_member' %}">about us</a></li>
 										<li><a href="#">blog</a></li>
 										<li><a href="#">blog left sidebar</a></li>
 										<li><a href="#">blog right sidebar</a></li>

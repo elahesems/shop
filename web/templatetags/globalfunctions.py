@@ -17,3 +17,22 @@ def lastDayAdded(context,value):
         context['sonGun']=False
     return ''
 register.simple_tag(takes_context=True)(lastDayAdded)
+
+
+
+
+
+
+# def lastDayAdded(context,value):
+#     team_memberDay=str(value.inDate)
+#     todayIs =str(datetime.today().strftime('%Y-%m-%d'))
+#
+#     if todayIs == team_memberDay:
+#
+#
+#         context['sonGun']=True
+#     else:
+#
+#         context['sonGun']=False
+#     return ''
+# register.simple_tag(takes_context=True)(lastDayAdded)
