@@ -3,6 +3,7 @@ Django==3.1.5
 django-colorfield==0.3.2
 django-crispy-forms==1.10.0
 django-filter==2.4.0
+django-jet2==1.0.12
 django-multiselectfield==0.1.12
 Pillow==8.1.0
 pytz==2020.5
